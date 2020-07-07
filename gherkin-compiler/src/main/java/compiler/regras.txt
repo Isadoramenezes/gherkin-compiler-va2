@@ -1,0 +1,4 @@
+Funcionalidade → 'Funcionalidade' ':' Texto Cenário+
+Cenário → 'Cenário' ':' Texto Passo+
+Passo → ('Dado' | 'Quando' | 'Então') Texto
+Texto → Qualquer sequência de caracteres (exceto quebra de linha) terminada em uma quebra de linha (\n)
