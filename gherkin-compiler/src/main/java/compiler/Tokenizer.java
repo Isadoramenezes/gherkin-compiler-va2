@@ -18,6 +18,7 @@ public class Tokenizer {
 
         for (int current = 0; current < length; current++) {
 
+            //Comentarios
             if(code.charAt(current) == '#'){ 
                 current++;                          
                 while(current < length){          
@@ -47,17 +48,18 @@ public class Tokenizer {
                 continue;
             }
         
-            // 
+            // Texto
             if (Character.isLetter(code.charAt(current))) {
                 int textStart = current;
                 int textEnd = textStart + 1;
 
-                while (Character.isLetterOrDigit(code.charAt(current)) || code.charAt(current)==' ' || code.charAt(current)=='"' ){
-                    if((code.charAt(current) == '\n')|| current == length -1 ){
-                        break;
-                    } 
+                while ((code.charAt(current) != '\n') && current < length -1 ){
+                    if(code.charAt(current) == '#'){
+                       break;
+                    }
                     current = textEnd++;
                 } 
+
                 tokens.add(new Token(TokenType.TEXTO, code.substring(textStart, textEnd - 1)));
                 current = textEnd - 2;
                 continue;

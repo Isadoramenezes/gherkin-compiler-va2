@@ -26,7 +26,7 @@ public class AnalyzerTest {
     public void funcionalidadeComMaisDeUmCenario() {
         Tokenizer tokenizer = new Tokenizer();
         List<Token> tokens = tokenizer.tokenize(
-            "Funcionalidade: Postagem no blog\n"+
+            "Funcionalidade: Postagem no blog #teste de comentario\n"+
             "Cenário: O Estrongildo faz uma postagem no seu blog \n"+
             "Dado que estou logado como o Estrongildo \n"+
             "Quando eu tentar realizar uma postagem com o título \"BDD is awesome \" \n"+
@@ -34,7 +34,7 @@ public class AnalyzerTest {
             "# O cenário abaixo necessita de dois usuários distintos\n"+
             "Cenário: O Estrongildo tenta excluir uma postagem que não é sua\n"+
             "Dado que estou logado como o Estrongildo\n"+
-            "Quando eu tento excluir a postagem \"Java sucks\" do Astroaldo\n"+
+            "Quando eu tento excluir a postagem \"Java sucks!\" do Astroaldo\n"+
             "Então eu devo ver a mensagem \" blog não é o seu!\" "
         );
 

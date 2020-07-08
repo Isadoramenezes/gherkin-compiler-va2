@@ -22,7 +22,7 @@ public class TokenizerTest {
     @Test
     public void testeTokenCenario() {
         final Tokenizer tokenizer = new Tokenizer();
-        final String code = "Cenário: teste dois \n";
+        final String code = "Cenário: teste um, & dois \n";
         final List<Token> tokens = tokenizer.tokenize(code);
 
         assert tokens.size() == 3;
@@ -49,7 +49,7 @@ public class TokenizerTest {
     @Test
     public void testeComentario() {
         final Tokenizer tokenizer = new Tokenizer();
-        final String code = "Cenário: abc def \n"+
+        final String code = "Cenário: abc def  #teste \n"+
         "# eu sou um comentario \n"+
         "Dado ghi";
         final List<Token> tokens = tokenizer.tokenize(code);
